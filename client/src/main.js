@@ -1,10 +1,12 @@
 import Vue from "vue";
 import VueSocketIO from "vue-socket.io";
 import VueSweetAlert from "vue-sweetalert2";
+import SocketIO from 'socket.io-client'
 import router from "./router.js";
 import App from "./App.vue";
 import Colors from "./styles/variables.scss";
 import "./registerServiceWorker";
+import LoadScript from "vue-plugin-load-script";
 
 // Bulma
 import "./styles/index.scss";
@@ -15,7 +17,7 @@ Vue.config.productionTip = false;
 Vue.use(
   new VueSocketIO({
     debug: false,
-    connection: "https://charadesio.herokuapp.com/",
+    connection: "https://scrbbl-ucla.herokuapp.com/",
     //connection: "http://localhost:5050",
   })
 );

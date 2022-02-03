@@ -46,14 +46,18 @@
           <input
             class="input"
             type="number"
-            placeholder="Text input"
+            placeholder="Enter a number..."
             v-model="maxUsers"
             min="2"
+            max="50"
             required
           />
         </div>
         <p class="help is-danger" v-if="errors['users']">
           Minimum users quantity is 2
+        </p>
+        <p class="help is-danger" v-if="errors['maxUsers']">
+          Maximum users quantity is 50
         </p>
       </div>
 

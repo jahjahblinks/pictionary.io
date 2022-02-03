@@ -2,15 +2,16 @@ const express = require("express");
 const app = express();
 const http = require("http").Server(app);
 const io = require("socket.io")(http);
+//Extra lines here in Team 4 GitHub
 const ROOMS = require("./rooms");
 const CHAT = require("./chat");
 
 global.io = io;
 global.CHAT = CHAT;
 
-app.get("/", (req, res) => {
-  res.redirect('https://karol-waliszewski.github.io/charades.io/');
-});
+//app.get("/", (req, res) => {
+//  res.redirect('https://karol-waliszewski.github.io/charades.io/');
+//});
 
 io.on("connection", socket => {
   // Connect
@@ -116,7 +117,7 @@ io.on("connection", socket => {
 let port = process.env.PORT || 5050;
 
 http.listen(port, () => {
-  console.log(`Puns.io server is listening on port: ${port}`);
+  console.log(`Server is listening on port: ${port}`);
 });
 
 process.on("exit", function (code) {

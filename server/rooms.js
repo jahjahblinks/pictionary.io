@@ -24,6 +24,7 @@ const CREATE_ROOM = function (socket, options) {
     wordTime: options.wordTime || 25,
     users: [],
     points: {},
+    //More code here from Team 4
     created: true,
   });
 

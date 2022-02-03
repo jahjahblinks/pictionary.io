@@ -1,5 +1,3 @@
-const axios = require("axios");
-const cheerio = require("cheerio");
 const ROUND = require("./round");
 
 class ROOM {
@@ -22,11 +20,14 @@ class ROOM {
     this.round = null;
   }
 
+  //Updated from Team 4
   async getWord() {
-    let word = await axios.get(
-      "http://www.kalambury.org/lib/generate.php?fbclid=IwAR0jEZum7uQ8tSN8ZzpMt3c1ZXwe5KJYYuJRiay2sqyTfx_3pnjyEKAxDL4"
-    );
-    word = cheerio.load(word.data.trim()).text();
+    var fs = require('fs');
+    var data = fs.readFileSync('WordList.txt','utf8')
+    data = data.split("\n");
+    var high = data.length;
+    var num = Math.floor(Math.random() * (high - 0) + 0);
+    var word = data[num].trim();
     return word;
   }
 
